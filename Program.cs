@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using System.Globalization;
 using DesafioProjetoHospedagem.Models;
 
 Console.OutputEncoding = Encoding.UTF8;
@@ -8,15 +9,19 @@ List<Pessoa> hospedes = new List<Pessoa>();
 
 Pessoa p1 = new Pessoa(nome: "Hóspede 1");
 Pessoa p2 = new Pessoa(nome: "Hóspede 2");
+Pessoa p3 = new Pessoa(nome: "Hóspede 3");
+Pessoa p4 = new Pessoa(nome: "Hóspede 4");
 
 hospedes.Add(p1);
 hospedes.Add(p2);
+hospedes.Add(p3);
+hospedes.Add(p4);
 
 // Cria a suíte
-Suite suite = new Suite(tipoSuite: "Premium", capacidade: 2, valorDiaria: 30);
+Suite suite = new Suite(tipoSuite: "Premium", capacidade: 4, valorDiaria: 30);
 
 // Cria uma nova reserva, passando a suíte e os hóspedes
-Reserva reserva = new Reserva(diasReservados: 5);
+Reserva reserva = new Reserva(diasReservados: 8);
 reserva.CadastrarSuite(suite);
 reserva.CadastrarHospedes(hospedes);
 
